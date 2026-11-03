@@ -1,0 +1,14 @@
+# Verified on Windows 11 with Python 3.12.13.
+# TensorFlow is pinned to a Keras-2-compatible release; do not install Keras 3
+# without checking YAMNet compatibility. TF_USE_LEGACY_KERAS=1 is set in the app.
+tensorflow==2.16.1
+tf-keras==2.16.0
+numpy==1.26.4
+scipy==1.13.1
+soundfile==0.12.1
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+pydantic==2.10.4
+pydantic-settings==2.7.0
+python-multipart==0.0.20
+httpx==0.28.1

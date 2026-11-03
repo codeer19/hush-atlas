@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: hush-atlas-api
+    runtime: python
+    plan: standard
+    region: oregon
+    buildCommand: pip install --upgrade pip && pip install -r backend/requirements.txt && python scripts/download-yamnet.py
+    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.13
+      - key: TF_USE_LEGACY_KERAS
+        value: "1"
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: SILENCE_DATA_DIR
+        value: /var/data
+      - key: SILENCE_HOSTED
+        value: "true"
+      - key: SILENCE_DATABASE_PATH
+        value: /var/data/silence_archive.sqlite3
+      - key: SILENCE_MODEL_DIR
+        value: /opt/render/project/src/models
+      - key: SILENCE_CORS_ORIGINS
+        sync: false
+      - key: SILENCE_MAX_UPLOAD_MB
+        value: "80"
+      - key: SILENCE_ANALYSIS_WORKERS
+        value: "1"
+    disk:
+      name: hush-atlas-data
+      mountPath: /var/data
+      sizeGB: 10

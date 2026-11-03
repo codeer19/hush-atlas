@@ -1,0 +1,226 @@
+/* ==========================================================================
+   Print — obituaries and readings on paper
+   ========================================================================== */
+
+@media print {
+  @page {
+    margin: 18mm;
+  }
+
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    background: #fff !important;
+    color: #252320;
+    font-family: Georgia, "Times New Roman", serif;
+  }
+
+  body::before,
+  .skip-link,
+  .site-header,
+  .site-footer,
+  .toast-stack,
+  .breadcrumbs,
+  .obituary-hero__actions,
+  .obituary-source__actions,
+  .obituary-pagination,
+  .reading-panel__footer,
+  .back-row,
+  .modal {
+    display: none !important;
+  }
+
+  .site,
+  .site-main {
+    display: block;
+    min-height: 0;
+  }
+
+  .shell,
+  .page {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  strong {
+    color: #171512 !important;
+  }
+
+  p,
+  dd,
+  dt,
+  li,
+  span,
+  small {
+    color: #3f3a33 !important;
+  }
+
+  .eyebrow {
+    color: #7a5826 !important;
+  }
+
+  .obituary-hero {
+    display: block;
+    border-bottom: 1px solid #b9b0a1;
+    padding-bottom: 8mm;
+  }
+
+  .obituary-hero h1 {
+    font-size: 42pt;
+    line-height: 0.95;
+  }
+
+  .obituary-hero__lede {
+    max-width: 100%;
+    font-size: 11pt;
+  }
+
+  .obituary-seal {
+    width: 48mm;
+    margin-top: 6mm;
+    border-color: #8f8778;
+    color: #252320;
+    page-break-inside: avoid;
+  }
+
+  .obituary-seal::before,
+  .obituary-seal__ring {
+    display: none;
+  }
+
+  .obituary-seal strong {
+    color: #7a4f33 !important;
+  }
+
+  .obituary-measure,
+  .obituary-body {
+    display: block;
+    padding-block: 8mm;
+    border-bottom: 1px solid #c9c1b4;
+  }
+
+  .obituary-measure__grid {
+    display: block;
+  }
+
+  .obituary-rate-card {
+    padding: 4mm;
+    margin-bottom: 5mm;
+    border: 1px solid #c9c1b4;
+    background: transparent;
+  }
+
+  .obituary-facts {
+    border-top: 1px solid #c9c1b4;
+  }
+
+  .obituary-facts div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 8mm;
+    padding-block: 1.4mm;
+    border-bottom: 1px solid #ddd6ca;
+  }
+
+  .obituary-facts dd {
+    text-align: right;
+  }
+
+  .obituary-evidence__columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5mm;
+  }
+
+  .obituary-evidence__columns > div,
+  .obituary-caveat,
+  .reading-panel {
+    padding: 4mm;
+    border: 1px solid #c9c1b4;
+    background: transparent !important;
+  }
+
+  .obituary-caveat {
+    margin-top: 6mm;
+    border-top: 2px solid #8f8778;
+    page-break-inside: avoid;
+  }
+
+  .reading-panel {
+    margin-block: 7mm;
+    page-break-inside: avoid;
+  }
+
+  .reading-panel__header,
+  .reading-panel__body {
+    padding: 4mm;
+  }
+
+  .reading-panel__text p {
+    color: #2f2b26 !important;
+    font-size: 11pt;
+    line-height: 1.6;
+  }
+
+  .reading-panel__text p:first-child::first-letter {
+    color: #7a5826 !important;
+  }
+
+  .reading-panel__source-note,
+  .reading-panel__caveat {
+    color: #625b51 !important;
+    font-size: 8pt;
+  }
+
+  .source-label {
+    border-color: #b9b0a1;
+    color: #5f574c;
+  }
+
+  .reading-panel__source-note {
+    border-top: 1px solid #ddd6ca;
+  }
+
+  .obituary-evidence__columns a,
+  .obituary-hero__dedication a {
+    color: #2f2b26 !important;
+    text-decoration: underline;
+  }
+
+  .obituary-recording-list li {
+    border-bottom: 1px solid #ddd6ca;
+  }
+
+  .obituary-source {
+    display: block;
+    padding-top: 5mm;
+    border-top: 1px solid #c9c1b4;
+  }
+
+  .rate-compare__track,
+  .mini-track {
+    background: #ddd6ca !important;
+  }
+
+  .rate-compare__track span,
+  .mini-track span {
+    background: #7a5826 !important;
+  }
+
+  .delta {
+    border-color: #b9b0a1;
+    color: #4a443c !important;
+  }
+
+  a {
+    color: inherit !important;
+  }
+}
